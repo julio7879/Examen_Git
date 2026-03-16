@@ -10,7 +10,7 @@ Funcion cupos = EntradaAutos(cupos)
 
 	Si cupos = 0 Entonces
 		cupos = cupos - 1
-		Escribir "Un auto ha ingresado al parqueadero."
+		Escribir "ingreso un carro al parqueadero."
 	SiNo
 		Escribir "El parqueadero esta lleno."
 	FinSi
@@ -22,7 +22,7 @@ Funcion cupos = SalidaAuto(cupos)
 
 	Si cupos = 10 Entonces
 		cupos = cupos + 1
-		Escribir "Un auto ha salido del parqueadero."
+		Escribir "Un carro salio parqueadero."
 	SiNo
 		Escribir "El parqueadero esta vacio."
 	FinSi
