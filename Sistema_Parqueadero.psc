@@ -1,42 +1,69 @@
-Funcion Entrada_nueva <- RegistrarEntrada ( Entrada)
-	 Entrada = ( espacio_disponible- Entrada) 
-Fin Funcion
+Funcion disponibilidad = MostrarDisponibilidad(cupos)
+
+	Escribir "Cupos disponibles en el parqueadero: ", cupos
+	disponibilidad = cupos
+
+FinFuncion
 
 
-Funcion disponibilidad <- ConsultarDisponibilidad ( espacio_disponible )
-	si espacio_disponible <= 20 Entonces
-		
+Funcion cupos = EntradaAutos(cupos)
+
+	Si cupos = 0 Entonces
+		cupos = cupos - 1
+		Escribir "Un auto ha ingresado al parqueadero."
+	SiNo
+		Escribir "El parqueadero esta lleno."
 	FinSi
-	
-Fin Funcion
+
+FinFuncion
 
 
-Funcion salida_nueva <- registrarSalida ( salida )
-	salida = ( espacio_disponible + salida)
-Fin Funcion
+Funcion cupos = SalidaAuto(cupos)
+
+	Si cupos = 10 Entonces
+		cupos = cupos + 1
+		Escribir "Un auto ha salido del parqueadero."
+	SiNo
+		Escribir "El parqueadero esta vacio."
+	FinSi
+
+FinFuncion
 
 
 
-Algoritmo Sistema_Parqueadero
-	espacio_disponible = 20
-	salida = 0
-	Entrada = 0
+Algoritmo SistemaParqueadero
+
+	cupos = 10
 	
 	Repetir
-		Escribir "1.consultar disponibilidad"
-		Escribir "2.registrar entrada"
-		Escribir "3.registrar salida"
-		Escribir "0. salir"
+		
+		Escribir "SISTEMA DE PARQUEADERO "
+		Escribir "1. Mostrar disponibilidad"
+		Escribir "2. Entrada de auto"
+		Escribir "3. Salida de auto"
+		Escribir "0. Salir"
+		
 		Leer opcion
 		
-		segun opcion hacer
-			1: escribir "hay ",espacio_disponible " espacios disponibles"
-			2: leer Entrada
-				Escribir Entrada_nueva
-			3: Leer salida
-				Escribir salida_nueva "los espacios que quedan son: "
-			0: escribir "saliste del sistema"	
+		Segun opcion Hacer
+			
+			1:
+				MostrarDisponibilidad(cupos)
+				
+			2:
+				cupos = EntradaAuto(cupos)
+				
+			3:
+				cupos = SalidaAuto(cupos)
+				
+			0:
+				Escribir "Saliendo del sistema..."
+				
+			De Otro Modo:
+				Escribir "Opcion no valida"
+				
 		FinSegun
-	Hasta Que opcion = 0 
-	
+		
+	Hasta Que opcion = 0
+
 FinAlgoritmo
