@@ -20,7 +20,7 @@ FinFuncion
 
 Funcion cupos = SalidaAuto(cupos)
 
-	Si cupos = 10 Entonces
+	Si cupos = 20 Entonces
 		cupos = cupos + 1
 		Escribir "Un carro salio parqueadero."
 	SiNo
@@ -33,7 +33,7 @@ FinFuncion
 
 Algoritmo SistemaParqueadero
 
-	cupos = 10
+	cupos = 20
 	
 	Repetir
 		
